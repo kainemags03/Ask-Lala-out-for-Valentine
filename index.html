@@ -29,6 +29,12 @@
         transform: translateY(-10px);
       }
     }
+
+    /* Allow multiline for No button */
+    #noButton {
+      white-space: normal; /* enable line breaks */
+      text-align: center;  /* center text inside button */
+    }
   </style>
   <!-- Preload images so transitions feel instant -->
   <link rel="preload" as="image" href="./images/image1.gif">
@@ -49,18 +55,18 @@
         class="rounded-md h-[300px] object-cover"
       />
       <h1 id="valentineQuestion" class="text-4xl font-bold italic text-[#bd1e59] my-4">
-        Will you be my Valentine?
+        Hi Lala, will you be my Valentine?
       </h1>
       <div id="responseButtons" class="flex gap-4 pt-5 items-center">
         <button
           id="yesButton"
-          class="bounce inline-flex items-center justify-center whitespace-nowrap rounded-md text-xl font-medium cursor-pointer px-4 py-2 bg-green-500 text-white transition-all duration-300 ease-in-out hover:bg-green-400 min-h-12 min-w-[75px]"
+          class="bounce inline-flex items-center justify-center rounded-md text-xl font-medium cursor-pointer px-4 py-2 bg-green-500 text-white transition-all duration-300 ease-in-out hover:bg-green-400 min-h-12 min-w-[75px]"
         >
           Yes
         </button>
         <button
           id="noButton"
-          class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-xl font-medium cursor-pointer px-4 py-2 bg-red-500 text-white transition-colors hover:bg-red-700 h-12 min-w-[75px]"
+          class="inline-flex items-center justify-center rounded-md text-xl font-medium cursor-pointer px-4 py-2 bg-red-500 text-white transition-colors hover:bg-red-700 h-12 min-w-[75px] text-center"
         >
           No
         </button>
@@ -94,11 +100,11 @@
 
       const NO_BUTTON_MESSAGES = [
         'No',
-        'Are you sure?',
-        'Pookie please',
-        "Don't do this to me :(",
-        "You're breaking my heart",
-        "I'm gonna cry...",
+        'wehh, sure ka?',
+        'hala siya',
+        "nooooo :(",
+        "nadorog na poso ko",
+        "para sa batang ako,\ndyan ka nalang ayaw ka ka-date dito." // <- line break added
       ];
 
       const ALT_TEXTS = [
@@ -142,7 +148,7 @@
       yesButton.addEventListener('click', () => {
         imageDisplay.src = IMAGE_PATHS[IMAGE_PATHS.length - 1];
         imageDisplay.alt = ALT_TEXTS[ALT_TEXTS.length - 1];
-        valentineQuestion.textContent = 'Yayyy!! :3';
+        valentineQuestion.textContent = 'See you sa friday lab!! :3';
         responseButtons.style.display = 'none';
 
         // Heart-shaped confetti for a valentine theme
