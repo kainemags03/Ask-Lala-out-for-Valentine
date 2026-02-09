@@ -29,12 +29,6 @@
         transform: translateY(-10px);
       }
     }
-
-    /* Allow multiline for No button */
-    #noButton {
-      white-space: normal; /* enable line breaks */
-      text-align: center;  /* center text inside button */
-    }
   </style>
   <!-- Preload images so transitions feel instant -->
   <link rel="preload" as="image" href="./images/image1.gif">
@@ -54,10 +48,10 @@
         alt="Cute kitten with flowers"
         class="rounded-md h-[300px] object-cover"
       />
-      <h1 id="valentineQuestion" class="text-4xl font-bold italic text-[#bd1e59] my-4">
+      <h1 id="valentineQuestion" class="text-4xl font-bold italic text-[#bd1e59] my-4 text-center">
         Hi Lala, will you be my Valentine?
       </h1>
-      <div id="responseButtons" class="flex gap-4 pt-5 items-center">
+      <div id="responseButtons" class="flex flex-col sm:flex-row gap-4 pt-5 items-center">
         <button
           id="yesButton"
           class="bounce inline-flex items-center justify-center rounded-md text-xl font-medium cursor-pointer px-4 py-2 bg-green-500 text-white transition-all duration-300 ease-in-out hover:bg-green-400 min-h-12 min-w-[75px]"
@@ -66,7 +60,8 @@
         </button>
         <button
           id="noButton"
-          class="inline-flex items-center justify-center rounded-md text-xl font-medium cursor-pointer px-4 py-2 bg-red-500 text-white transition-colors hover:bg-red-700 h-12 min-w-[75px] text-center"
+          class="inline-flex items-center justify-center rounded-md text-xl font-medium cursor-pointer px-3 py-2 bg-red-500 text-white transition-colors hover:bg-red-700 text-center min-h-12 max-w-[180px] sm:max-w-[220px] md:max-w-[250px]"
+          style="white-space: normal; word-break: break-word;"
         >
           No
         </button>
